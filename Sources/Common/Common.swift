@@ -4,3 +4,4 @@ public struct Common {
     public init() {
     }
 }
+
