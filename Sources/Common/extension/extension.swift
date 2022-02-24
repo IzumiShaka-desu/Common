@@ -5,7 +5,7 @@
 //  Created by Akashaka on 24/02/22.
 //
 import SwiftUI
-extension Color {
+public extension Color {
     public init(decimalRed red: Double, green: Double, blue: Double) {
         self.init(red: red / 255, green: green / 255, blue: blue / 255)
     }
