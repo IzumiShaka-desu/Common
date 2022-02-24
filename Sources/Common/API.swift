@@ -29,7 +29,7 @@ public struct API {
 
 public protocol Endpoint {
 
- public var url: String { get }
+  var url: String { get }
 
 }
 
