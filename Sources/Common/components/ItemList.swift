@@ -15,7 +15,22 @@ public struct ItemList: View {
   var genres: [String]
   var imageUrl: String
   var id: Int
-  
+public init(
+    title: String,
+    releaseDate: String,
+    platforms: [String],
+    genres: [String],
+    imageUrl: String,
+    id: Int
+){
+  self.id = id
+  self.imageUrl = imageUrl
+  self.genres = genres
+  self.platforms = platforms
+  self.releaseDate = releaseDate
+  self.title = title
+
+  }
 public  var body: some View {
     ZStack(alignment: .leading) {
       Color.flatDarkCardBackground

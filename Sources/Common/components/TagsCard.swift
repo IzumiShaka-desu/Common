@@ -11,6 +11,15 @@ public struct TagsCard: View {
  public   var text: String
     var fontSize: CGFloat = 12.0
     var bgColor: Color = Color.green
+ public init(
+    text: String,
+    fontSize: CGFloat = 12.0,
+    bgColor: Color = Color.green
+  ){
+    self.text = text
+    self.fontSize = fontSize
+    self.bgColor = bgColor
+  }
 public    var body: some View {
         ZStack {
             Text(text)
