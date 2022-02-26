@@ -21,15 +21,27 @@ struct ItemList: View {
       Color.flatDarkCardBackground
       HStack {
         ZStack {
-          NetworkImage(url: URL(string: imageUrl)) { image in
-            image.resizable()
-          } placeholder: {
-            ProgressView()
-          } fallback: {
-            Image(systemName: "photo")                     }
-          .frame(width: 75, height: 75)
-          .clipped()
-          .background().cornerRadius(10)
+          if #available(macOS 12.0, *) {
+            NetworkImage(url: URL(string: imageUrl)) { image in
+              image.resizable()
+            } placeholder: {
+              ProgressView()
+            } fallback: {
+              Image(systemName: "photo")                     }
+            .frame(width: 75, height: 75)
+            .clipped()
+            .background().cornerRadius(10)
+          } else {
+            NetworkImage(url: URL(string: imageUrl)) { image in
+              image.resizable()
+            } placeholder: {
+              ProgressView()
+            } fallback: {
+              Image(systemName: "photo")                     }
+            .frame(width: 75, height: 75)
+            .clipped()
+            // Fallback on earlier versions
+          }
         }
         .frame(width: 70, height: 70, alignment: .center)
         
