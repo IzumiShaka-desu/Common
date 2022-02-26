@@ -22,7 +22,7 @@ public init(
     genres: [String],
     imageUrl: String,
     id: Int
-){
+) {
   self.id = id
   self.imageUrl = imageUrl
   self.genres = genres
@@ -70,7 +70,7 @@ public  var body: some View {
           }
         }
         .frame(width: 70, height: 70, alignment: .center)
-        
+
         VStack(alignment: .leading) {
           Text(title).foregroundColor(.white)
             .font(.headline)
@@ -79,7 +79,7 @@ public  var body: some View {
             .padding(.bottom, 5)
           Text(releaseDate)
             .padding(.bottom, 5).foregroundColor(.white)
-          
+
           HStack(alignment: .center) {
             ForEach(platforms, id: \.self) { platform in
               TagsCard(
@@ -88,7 +88,7 @@ public  var body: some View {
             }
           }
           .padding(.bottom, 5)
-          
+
           HStack {
             ForEach(genres, id: \.self) { genre in
               TagsCard(text: genre, bgColor: .pink)
@@ -96,19 +96,19 @@ public  var body: some View {
           }
         }
         .padding(.horizontal, 5)
-        
+
       }
       .padding(15)
     }        .clipShape(RoundedRectangle(cornerRadius: 15))
   }
-  
+
 }
 
 struct ItemList_Previews: PreviewProvider {
   static var previews: some View {
-    
+
     let platforms: [String] = ["PS5", "PC"]
-    
+
     ItemList(
       title: "title",
       releaseDate: "address",

@@ -15,7 +15,7 @@ public struct TagsCard: View {
     text: String,
     fontSize: CGFloat = 12.0,
     bgColor: Color = Color.green
-  ){
+  ) {
     self.text = text
     self.fontSize = fontSize
     self.bgColor = bgColor

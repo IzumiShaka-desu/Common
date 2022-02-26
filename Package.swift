@@ -8,7 +8,7 @@ let package = Package(
     platforms: [.iOS(.v14), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-      
+
         .library(
             name: "Common",
             targets: ["Common"]
@@ -18,7 +18,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
       .package( url: "https://github.com/gonzalezreal/NetworkImage.git", from: "4.0.0"),
-      .package(url:"https://github.com/exyte/PopupView.git",from: "1.0.0"),
+      .package(url: "https://github.com/exyte/PopupView.git", from: "1.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -27,7 +27,7 @@ let package = Package(
             name: "Common",
             dependencies: [
               "NetworkImage",
-              "PopupView",
+              "PopupView"
             ]),
         .testTarget(
             name: "CommonTests",
