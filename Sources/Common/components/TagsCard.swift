@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct TagsCard: View {
-    var text: String
+public struct TagsCard: View {
+ public   var text: String
     var fontSize: CGFloat = 12.0
     var bgColor: Color = Color.green
-    var body: some View {
+public    var body: some View {
         ZStack {
             Text(text)
                 .font(.system(size: fontSize, weight: .regular))

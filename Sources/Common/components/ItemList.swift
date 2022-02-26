@@ -8,7 +8,7 @@
 import SwiftUI
 import NetworkImage
 
-struct ItemList: View {
+public struct ItemList: View {
   var title: String
   var releaseDate: String
   var platforms: [String]
@@ -16,7 +16,7 @@ struct ItemList: View {
   var imageUrl: String
   var id: Int
   
-  var body: some View {
+public  var body: some View {
     ZStack(alignment: .leading) {
       Color.flatDarkCardBackground
       HStack {
