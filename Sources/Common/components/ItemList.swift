@@ -37,15 +37,26 @@ public  var body: some View {
       HStack {
         ZStack {
           if #available(macOS 12.0, *) {
-            NetworkImage(url: URL(string: imageUrl)) { image in
-              image.resizable()
-            } placeholder: {
-              ProgressView()
-            } fallback: {
-              Image(systemName: "photo")                     }
-            .frame(width: 75, height: 75)
-            .clipped()
-            .background().cornerRadius(10)
+            if #available(iOS 15.0, *) {
+              NetworkImage(url: URL(string: imageUrl)) { image in
+                image.resizable()
+              } placeholder: {
+                ProgressView()
+              } fallback: {
+                Image(systemName: "photo")                     }
+              .frame(width: 75, height: 75)
+              .clipped()
+              .background().cornerRadius(10)
+            } else {
+              NetworkImage(url: URL(string: imageUrl)) { image in
+                image.resizable()
+              } placeholder: {
+                ProgressView()
+              } fallback: {
+                Image(systemName: "photo")                     }
+              .frame(width: 75, height: 75)
+              .clipped()
+            }
           } else {
             NetworkImage(url: URL(string: imageUrl)) { image in
               image.resizable()
