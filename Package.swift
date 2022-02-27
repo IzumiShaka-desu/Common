@@ -18,6 +18,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
       .package(url: "https://github.com/gonzalezreal/NetworkImage.git", from: "4.0.0"),
+      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.5.0"),
       .package(url: "https://github.com/exyte/PopupView.git", from: "1.0.0"),
       .package(url: "https://github.com/realm/realm-swift", from: "10.22.0"),
     ],
@@ -28,6 +29,7 @@ let package = Package(
             name: "Common",
             dependencies: [
               "NetworkImage",
+              "Alamofire",
               "PopupView",
               .product(name: "RealmSwift", package: "realm-swift"),
             ]),
